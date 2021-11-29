@@ -1,0 +1,367 @@
+:root {
+    --coeff: 2;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 0;
+}
+
+#center {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes zoom_right {
+    from {
+        top: 50%;
+        left: 50%;
+    }
+    to {
+        top: 22%;
+        left: -10%;
+        transform: scale(2.3);}
+    }
+
+@keyframes zoom_up {
+    from {
+        top: 50%;
+        left: 50%;
+    }
+    to {
+        top: 50%;
+        left: 22%;
+        transform: scale(2.5);}
+    }
+
+@keyframes zoom {
+    from {
+        top: 50%;
+        left: 50%;
+    }
+    to {
+        top: 22%;
+        left: 18%;
+        transform: scale(2.8);}
+    }
+  
+  /* The element to apply the animation to */
+#img_zoom_right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: zoom_right;
+    animation-duration: 5s;
+}
+
+#img_zoom_up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: zoom_up;
+    animation-duration: 5s;
+}
+
+#img_zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: zoom;
+    animation-delay: 2s;
+    animation-duration: 5s;
+}
+
+.map_holder {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#mapid {
+    height: 98vh;
+    width: 140vh;
+    z-index: 2;
+}
+
+#box {
+    position: absolute;
+    width:100%;
+    height:25%;
+    top: 20%;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Impact";
+    font-size: large;
+    z-index: 3;
+}
+
+#box_2 {
+    position: absolute;
+    width:100%;
+    height:20%;
+    top: 20%;
+    -left: 10%;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Impact";
+    font-size: xx-large;
+    z-index: 1001;
+}
+
+
+@keyframes move_1 {
+    0% {
+        transform: translate(0px, 0px);
+    } 37.8% {
+        transform: translate(calc(-840px / var(--coeff)), calc(20px / var(--coeff)));
+    } 46.6% {
+        transform: translate(calc(-838px / var(--coeff)), calc(210px / var(--coeff)));
+    } 63.4% {
+        transform: translate(calc(-470px / var(--coeff)), calc(208px / var(--coeff)));
+    } 66.1% {
+        transform: translate(calc(-470px / var(--coeff)), calc(140px / var(--coeff)));
+    } 90.76% {
+        transform: translate(calc(80px / var(--coeff)), calc(138px / var(--coeff)));
+    } 94.06% {
+        transform: translate(calc(80px / var(--coeff)), calc(60px / var(--coeff)));
+    } 97.26% {
+        transform: translate(calc(2px / var(--coeff)), calc(60px / var(--coeff)));
+    } 
+}
+
+@keyframes move_2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    34.84% {
+        transform: translate(calc(189px / var(--coeff)), 0px);
+    } 50% {
+        transform: translate(calc(189px / var(--coeff)), calc(70px / var(--coeff)));
+    } 84.84% {
+        transform: translate(calc(1px / var(--coeff)), calc(70px / var(--coeff)));
+    } 
+}
+
+@keyframes move_3 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    21.15% {
+        transform: translate(0px, calc(-133px / var(--coeff)));
+    } 50% {
+        transform: translate(calc(-182px / var(--coeff)), calc(-133px / var(--coeff)));
+    } 71.15% {
+        transform: translate(calc(-182px / var(--coeff)), 0px);
+    } 
+}
+
+@keyframes move_4 {
+    0% {
+        transform: translate(0px, 0px);
+    } 7.21% {
+        transform: translate(calc(-167px / var(--coeff)), 0px);
+    } 10.37% {
+        transform: translate(calc(-167px / var(--coeff)), calc(-67px / var(--coeff)));
+    } 18.54% {
+        transform: translate(calc(-355px / var(--coeff)), calc(-67px / var(--coeff)));
+    } 21.18% {
+        transform: translate(calc(-355px / var(--coeff)), calc(-123px / var(--coeff)));
+    } 29.44% {
+        transform: translate(calc(-544px / var(--coeff)), calc(-123px / var(--coeff)));
+    } 37.87% {
+        transform: translate(calc(-544px / var(--coeff)), calc(67px / var(--coeff)));
+    } 54.04% {
+        transform: translate(calc(-914px / var(--coeff)), calc(67px / var(--coeff)));
+    } 56.5% {
+        transform: translate(calc(-914px / var(--coeff)), calc(2px / var(--coeff)));
+    }
+}
+
+
+.police_1 {
+    animation: move_1 50s infinite;
+    animation-timing-function: linear;
+}
+
+.police_2 {
+    animation: move_2 10s infinite;
+    animation-timing-function: linear;
+}
+
+.police_3 {
+    animation: move_3 10s infinite;
+    animation-timing-function: linear;
+}
+
+.police_4 {
+    animation: move_4 50s infinite;
+    animation-timing-function: linear;
+}
+
+#jeu_2 {
+    display: grid; 
+    grid-template-columns: repeat(10, 10%); 
+    grid-template-rows: repeat(10, 10%);
+    z-index: 4;
+    background-color: rgb(27, 27, 25);
+}
+
+#mapid_2 {
+    grid-area: 1/2/11/10;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+}
+
+#chambre {
+    grid-area: 1/2/11/10;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#tiroir {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    width:16%;
+    height:17%;
+    top: 52%;
+    left: 68%;
+    z-index: 1001;
+    transform: skew(-3deg, 22deg) rotate(2deg);
+    cursor: pointer;
+}
+
+#retour {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    background-color: rgb(207, 64, 64);
+    font-size: 2em;
+    font-family: "Impact";
+    text-align: center;
+    color: black;
+    border: 15px solid black;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#objets_text {
+    grid-column-start: 10;
+    grid-row-start: 1;
+    z-index: 1001;
+    font-family: "Impact";
+    font-size: 2em;
+    color: blanchedalmond;
+    text-align: center;
+}
+
+.cases {
+    grid-column-start: 10;
+    background-color: red;
+    width: 1fr;
+    height: 1fr;
+    border: 1px solid black;
+    opacity: 0.2;
+    z-index: 1003;
+}
+
+#flingue {
+    grid-column-start: 10;
+    grid-row-start: 2;
+    width: 100%;
+    height: 100%;
+    z-index: 1004;
+}
+
+#cagoule {
+    grid-column-start: 10;
+    grid-row-start: 3;
+    width: 100%;
+    height: 100%;
+    z-index: 1004;
+}
+
+#diamant {
+    grid-column-start: 10;
+    grid-row-start: 4;
+    width: 100%;
+    height: 100%;
+    z-index: 1004;
+}
+
+#key {
+    grid-column-start: 10;
+    grid-row-start: 5;
+    width: 100%;
+    height: 100%;
+    z-index: 1004;
+}
+
+#pass {
+    grid-column-start: 3;
+    grid-row-start: 7;
+    width: 100%;
+    height: 100%;
+    z-index: 1004;
+}
+
+#car_key {
+    grid-column-start: 8;
+    grid-row-start: 8;
+    z-index: 1004;
+    width: 100%;
+    height: 100%;
+}
+
+#billet {
+    grid-column-start: 10;
+    grid-row-start: 8;
+    z-index: 1004;
+    width: 100%;
+    height: 100%;
+}
+
+#leave {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    background-color: rgb(207, 64, 64);
+    font-size: 2em;
+    font-family: "Impact";
+    text-align: center;
+    color: black;
+    border: 15px solid black;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+
+#img_2 {
+    display: absolute;
+    z-index: 1005;
+    width: 0px;
+    height: 0px;
+}

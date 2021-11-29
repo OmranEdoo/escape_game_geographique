@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Diamant detector</title>
+  </head>
+  <link rel="stylesheet" href="css/interface.css">
+  <body>
+    <center>
+
+        <h1>A LA RECHERCHE DU DIAMANT</h1>
+
+        <h2>Son histoire</h2>
+
+        <div id="style">
+            <h3> HALL OF FAME : </h3>
+            <script id="script">
+                fetch('../php/hof.php', {methode: 'get'})
+                .then(bdd => bdd.json())
+                .then(bdd => {
+                    bdd.forEach(element => {
+                        var pseudo = element["pseudo"];
+                        var score = element["score"];
+                        if (score && pseudo) {
+                            console.log("test");
+                            var t = document.createElement("P");
+                            t.innerText = pseudo.concat(" ", score.toString());
+                            console.log(t);
+                            var hof = document.getElementById("style");
+                            hof.appendChild(t);
+                        }
+                    });
+                })
+            </script>
+        </div>
+
+        <p>Bienvenue,</p>
+        <p>Avant de commencer cette aventure, laissez moi vous conter l'histoire de ce diamant pour que rien ne vous échappe.</p>
+        <p>Autrefois, il subsistait une reine nommée Queen Mannior vivant dans le chateau Blue Hold. Cette reine, extrêmement riche possédait une fortune estimée à 150 millions de dollards.
+        <p>En réalité, elle devait sa fortune à son mari, qui était un général de Guerre très reputé dans la région du Texas.</p>
+        <p>Vous l'aurez donc compris, qui dit richesse, dit bijou. Cette femme possédait un nombre de bijou inconsidérable.</p>
+        <p>Mais, parmi tout cela, il y en avait un qui n'était pas comme les autres : Le Blue Hold Diamond.</p>
+        <p>De génération en génération, personne ne réussit à percer le secret de ce diamant puisqu'il avait la réputation de porter malheur pouvant aller jusqu'à causer la mort à tout ses propriétaires.</p>
+        <p>MAIS COMMENT CELA EST-IL POSSIBLE ?</p>
+        C'est ce que tout le monde se demandait.
+        Queen Mannior décida alors de retrouver ce diamant et de le rendre au Museum d'Histoire naturel afin d'en finir avec cette malédiction.</p>
+        <p>Elle decida alors de céder son diamant au Museum d'Histoire Naturel pour la maudite somme de 94 millions de dollards.</p>
+        <p>La nouvelle s'ébruita et toute la ville fut rapidement au courant,ce qui suscita vivement l'intêret des voleurs.</p>
+        <p>Ce qui devait arriver arriva ... Lors de la transaction un homme masqué arriva et deroba le fameux bijou.</p>
+        <p>Mais une question se pose alors, est-il au courant de la réputation maudite de ce diamant ?</p>
+        <p>Le voleur réussira-t-il à rejoindre l'aéroport pour s'évader avec le diamant?</p>
+        <p>Pour commencer l'aventure c'est ici :</p>
+
+        <form action="php/interface.php" method="GET">
+            <input type="text" name="pseudo" placeholder="pseudo"><br>
+            <input class="myButton" type="submit" name="envoi" value="Commencer le jeu">
+        </form>
+
+    </center>
+
+  </body>
+</html>
