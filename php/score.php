@@ -15,5 +15,5 @@
     mysqli_query($link, $requete);
     mysqli_close($link);
 
-    header('Location: '."..");*/
+    header('Location: '."..");
 ?>
